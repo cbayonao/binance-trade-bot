@@ -55,12 +55,12 @@ Create a .cfg file named `user.cfg` based off `.user.cfg.example`, then add your
 -   **bridge** - Your bridge currency of choice. Notice that different bridges will allow different sets of supported coins. For example, there may be a Binance particular-coin/USDT pair but no particular-coin/BUSD pair.
 -   **tld** - 'com' or 'us', depending on your region. Default is 'com'.
 -   **hourToKeepScoutHistory** - Controls how many hours of scouting values are kept in the database. After the amount of time specified has passed, the information will be deleted.
--   **use_margin** - 'yes' to use `scout_margin`. 'no' to use `scout_multiplier`.
+-   **use_margin** - 'true' to use `scout_margin`. 'false' to use `scout_multiplier`.
 -   **scout_multiplier** - Controls the value by which the difference between the current state of coin ratios and previous state of ratios is multiplied. For bigger values, the bot will wait for bigger margins to arrive before making a trade.
 -   **scout_margin** - Minimum percentage coin gain per trade. 0.8 translates to a scout multiplier of 5 at 0.1% fee.
 -   **strategy** - The trading strategy to use. See [`binance_trade_bot/strategies`](binance_trade_bot/strategies/README.md) for more information
 -   **scout_sleep_time** - Controls how many seconds bot should wait between analysis of current prices. Since the bot now operates on websockets this value should be set to something low (like 1), the reasons to set it above 1 are when you observe high CPU usage by bot or you got api errors about requests weight limit.
--   **enable_paper_trading** - (`True` or `False` default `False`) run bot with virtual wallet to check its performance without risking any money.
+-   **enable_paper_trading** - (`true` or `false` default `False`) run bot with virtual wallet to check its performance without risking any money.
 
 #### Environment Variables
 
@@ -107,9 +107,9 @@ Please remember that this is a fork. To maintain the security of your API key it
 
 ### Build and run locally
 1. Clone this git to a location of your choice: 
-`git clone https://github.com/masaiasuose/binance-trade-bot tntwist-binance-trade-bot`
+`git clone https://github.com/masaiasuose/binance-trade-bot masaiasuose-binance-trade-bot`
 2. Change to the directory:
-`cd tntwist-binance-trade-bot`
+`cd masaiasuose-binance-trade-bot`
 3. Build the container locally (this may take a few minutes depending on your hardware):
 `docker build . -t masaiasuose-binance-trade-bot`
 4. Follow the steps in [Create user configuration](#create-user-configuration) to ensure you have created a `user.cfg` file in the directory created in step 2. If you have already done this, continue to step 5.
@@ -126,7 +126,7 @@ docker-compose up -d sqlitebrowser
 
 ## Bot-testing
 
-You can test the bot on historic data or with paper trading on live data to see how it performs. Papertrading is much faster but isn't as accurate as paper trading.
+You can test the bot on historic data with backtesting or with paper trading on live data to see how it performs. Backtesting is much faster but isn't as accurate as paper trading.
 
 ### Backtesting
 
@@ -212,7 +212,13 @@ Thanks to a group of talented developers, there is now a [Telegram bot for remot
 
 ## Support the Project
 
+Fist of all, support the originator of this bot and buy him a coffee. ☕
+
 <a href="https://www.buymeacoffee.com/edeng" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+
+If you like my adjustments and you want to support me I would appreciate to get a coffee too. 😜
+
+<a href="https://www.buymeacoffee.com/masaiasuose" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
 ## Join the Chat
 
